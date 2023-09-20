@@ -1,0 +1,31 @@
+<html>
+    <head>
+       <style>
+         #d1{
+            width: 200px;
+            height: 150px;
+            border: 1px solid;
+            margin: 0 auto;
+        }
+       </style>
+    </head>
+    <body>
+        <center><h1 style="color: red;">Change background Color using toggle </h1></center>
+        <div id ="d1"></div>
+        <br>
+       <center><button onclick="b()" id = "d2" style="background-color: orange;"></button></center> 
+        <script>  
+        document.getElementById("d2").innerHTML="toggle";
+        var x = document.getElementById("d1");
+          x.style.backgroundColor="white";    
+            function b(){                     
+                    if(x.style.backgroundColor==="white"){
+                   document.getElementById("d1").style.backgroundColor="yellow"
+                }
+                else{
+                    document.getElementById("d1").style.backgroundColor="white"
+                }                
+            }
+        </script>
+    </body>
+</html>

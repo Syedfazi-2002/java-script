@@ -1,0 +1,32 @@
+<!--  changing background button color -->
+<html>
+    <head>
+        <style>
+            button{
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <h1 style="color: red;">change the button background color on click</h1>
+            <button  id ="d1" onclick="a(event)"></button>
+        </div>
+        <script>
+            document.getElementById("d1").innerHTML="white"
+
+            function a (ev){
+                if(ev.target.innerHTML==="white"){
+                    ev.target.innerHTML="green"
+                    ev.target.style.color="white"
+                    ev.target.style.backgroundColor="green"
+                }     
+                else{
+                    ev.target.innerHTML="white"
+                    ev.target.style.color="black"
+                    ev.target.style.backgroundColor="white"
+                }           
+            }
+        </script>
+    </body>
+</html>

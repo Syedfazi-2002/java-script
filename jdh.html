@@ -1,0 +1,52 @@
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="m1" placeholder="firstname">
+        <br>
+        <input type="text" id="m2" placeholder="lastname">
+        <br>
+        <input type="text" id="m3" placeholder="gender">
+        <br>
+        <button id = "f1" onclick="abc()"></button><br>
+        <table id = "f2" border="1px solid">
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>gender</th>
+        <tbody id = "zz"></tbody>
+        </table>
+        <script>
+            document.getElementById("f1").innerHTML="submit"
+            var details = []
+            function abc(){
+                var detail = {
+                    firstname:"",
+                    lastname:"",
+                    gender:""                   
+                }
+                detail.firstname=document.getElementById("m1").value
+                detail.lastname=document.getElementById("m2").value
+                detail.gender=document.getElementById("m3").value
+                details.push(detail)
+                console.log(details)
+                newbox ();
+            }
+           function newbox(){
+            document.getElementById("zz").innerHTML=""
+
+            details.forEach(function(a){
+                var ntr = document.createElement("tr")
+                var ntd = document.createElement("td")
+                ntd.innerHTML=a.firstname
+                ntr.appendChild(ntd)
+                var ntd = document.createElement("td")
+                ntd.innerHTML=a.lastname
+                ntr.appendChild(ntd)
+                var ntd = document.createElement("td")
+                ntd.innerHTML=a.gender
+                ntr.appendChild(ntd)           
+                document.getElementById("zz").appendChild(ntr)
+            })
+           }
+        </script>
+    </body>
+</html>

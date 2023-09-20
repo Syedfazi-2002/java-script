@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input id="d1"  type="text" placeholder="firstname">
+        <button id="d2" onclick="abc()"></button>
+        <input id="d3" type="text" >
+        <ul id="d4"></ul>
+    </body>
+    <script>
+        var b = document.getElementById("d1")
+        var c = document.getElementById("d3")
+        var d = document.getElementById("d2")
+        d.innerHTML="save"
+        var ar =[]
+        function abc(){
+          ar.push(e.value)
+          thedisplay();
+        }
+        function thedisplay(){
+            var e = document.getElementById("d4")
+               e.innerHTML=""
+            ar.forEach(function(a,b){
+                var nli = document.createElement("li")
+                nli.innerHTML=a
+                var but =document.createElement("button")
+                but.innerHTML="delete"
+                var edi = document.createElement("button")
+                     edi.innerHTML="edit"
+                    e.appendChild(nli)
+            })
+        }
+    </script>
+</html>

@@ -1,0 +1,37 @@
+ <!-- changing bulb by using on and off buttons -->
+<html>
+    <head>
+        <style>
+            #d2{
+              width: 200px;
+              height: 150px;
+             margin : 0 auto;
+            }        
+        </style>
+    </head>
+    <body>
+        <center><h1 style="color: red;"> Show Bulb on/off image using toggle</h1></center>
+         <center><img  id="d2" src=" "alt=""></center> 
+        <br>
+        <center><button  id = "d3" onclick="bulb()" style="background-color: orange;"></button></center>
+        <script>
+            var image = ["https://static.vecteezy.com/system/resources/previews/002/682/943/original/light-bulb-energy-power-cartoon-line-style-free-vector.jpg",
+                 "https://i.vimeocdn.com/video/1058487638-efd75dd12bce24254c08b57751d2bcd010f887e6bc4f67e0e2803d53f9ed8a53-d_640x360.jpg"]
+
+          var g =  document.getElementById("d2");
+          g.src=image[0]   
+           var d =  document.getElementById("d3")
+           d.innerHTML="on"  
+           function bulb(){
+            if(d.innerHTML==="on"){
+                g.src=image[1]
+                d.innerHTML="off"
+            }
+            else{
+                g.src=image[0]
+                d.innerHTML="on"
+            }
+           }
+        </script>
+    </body>
+</html>

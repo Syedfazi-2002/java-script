@@ -1,0 +1,60 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input id="d2" type="text" placeholder="firstname"><br>
+        <button id="d1" onclick="abc()"></button>
+        <button id="d7" onclick="bbc()"></button>
+        <ul id ="d3"></ul>
+    </body>
+    <script>
+        var cindex ;
+        var c =  document.getElementById("d1");
+            c.innerHTML="add name"
+            var ar =[]
+          var d =  document.getElementById("d3")
+          var e = document.getElementById("d2")
+          var x = document.getElementById("d7")
+          x.innerHTML = "update"
+          x.style.display="none"
+          function abc(){            
+            ar.push(e.value);
+              maketab();
+          }
+        function maketab(){
+           var f = document.getElementById("d3")
+            f.innerHTML=""
+            ar.forEach(function(a,b){
+              var nli = document.createElement("li")
+              nli.innerHTML=a;
+              var but =document.createElement("button")
+              but.innerHTML="delete"
+              var edi = document.createElement("button")
+              edi.innerHTML="edit"
+              nli.appendChild(but)
+              nli.appendChild(edi)
+              f.appendChild(nli)
+
+              but.onclick=function(){
+                ar.splice(a,1)
+                maketab();
+              }
+              edi.onclick=function(){
+                  e.value = a 
+                  c.style.display="none"
+                  x.style.display="block"
+                   cindex=b
+              }
+            })
+        } 
+            function bbc(){
+                  ar[cindex]=e.value
+                  maketab();
+                  x.style.display="none"
+                  c.style.display="block"
+                  e.value=""
+            }
+             
+    </script>
+</html>

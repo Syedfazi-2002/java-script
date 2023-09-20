@@ -1,0 +1,106 @@
+<html>
+<head>
+</head>
+<body>
+    <input id="d1" type="text" placeholder="firstname">
+    <br>
+    <input id="d2" type="text" placeholder="lastname">
+    <br>
+    <input id="d3" type="text" placeholder="age">
+    <br>
+    <button id="d4" onclick="abc()"></button>
+    <button id="d6" onclick="bbc()"></button>
+    <br><br>
+    <table border="1px">
+        <thead>
+            <th>firstname</th>
+            <th>lastname</th>
+            <th>age</th>
+            <th>action</th>
+        </thead>
+        <tbody id="d5"></tbody>
+    </table>
+    <script>
+        var cindex;
+        var y = document.getElementById("d4")
+        y.innerHTML = "Add button"
+        var br = [];
+        var u = document.getElementById("d1")
+        var v = document.getElementById("d2")
+        var w = document.getElementById("d3")
+        var z = document.getElementById("d6")
+        z.innerHTML = "update";
+        z.style.display = "none"
+
+        function abc() {
+            var student = {
+                firstname: "",
+                lastname: "",
+                age: "",
+            }
+            student.firstname = u.value
+            student.lastname = v.value
+            student.age = w.value
+            br.push(student);
+            gentable();
+        }
+        function gentable() {
+            document.getElementById("d5").innerHTML = ""
+            br.forEach(function (a, b) {
+                var ntr = document.createElement("tr")
+                var ntd = document.createElement("td")
+                ntd.innerHTML = a.firstname
+                ntr.appendChild(ntd)
+
+                var ntd = document.createElement("td")
+                ntd.innerHTML = a.lastname
+                ntr.appendChild(ntd)
+
+                var ntd = document.createElement("td")
+                ntd.innerHTML = a.age
+                ntr.appendChild(ntd)
+
+                var ntd = document.createElement("td")
+                var nbt = document.createElement("button")
+                var nbt1 = document.createElement("button")
+                nbt.innerHTML = "Delete"
+                nbt1.innerHTML = "Edit"
+                ntd.appendChild(nbt)
+                ntd.appendChild(nbt1)
+                ntr.appendChild(ntd)
+                document.getElementById("d5").appendChild(ntr)
+
+                nbt.onclick = function () {
+                    br.splice(b, 1);
+                    gentable();
+                }
+                nbt1.onclick = function () {
+                    u.value = a.firstname
+                    v.value = a.lastname
+                    w.value = a.age
+                    y.style.display = "none"
+                    z.style.display = "block"
+                    cindex = b
+                }
+            })
+        }
+            function bbc() {
+                var student = {
+                    firstname: "",
+                    lastname: "",
+                    age: "",
+                }
+                student.firstname = u.value
+                student.lastname = v.value
+                student.age = w.value
+                br[cindex]=student;
+                gentable();
+                z.style.display ="none"
+                y.style.display="block"
+               u.value = ""
+              v.value = ""
+                w.value = ""
+            }
+    </script>
+</body>
+</html>

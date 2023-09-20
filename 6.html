@@ -1,0 +1,49 @@
+
+<html>
+   <head>
+      <style>
+       #d1{
+         width: 50px;
+         height: 20px;
+         border: 1px solid;
+         text-align: center;   
+       }
+      </style>
+   </head>
+   <body>
+      <div id="d1" onclick="a()"></div>
+      <script>
+           var c = document.getElementById("d1")
+            c.innerHTML="on"
+           function a(){
+            if(c.innerHTML==="on"){
+              c.innerHTML="off"
+           }
+           else{
+            c.innerHTML="on"
+           }        
+           }
+         
+      </script>
+   </body>
+</html>
+
+<!-- we need to write div also -->
+<!-- <html>
+    <head>
+    </head>
+    <body>
+        <button id = "d1" onclick="a(event)">on</button>
+        <script>
+           function a (ev) {
+             var c = document.querySelector("#d1")
+             if(ev.target.innerHTML==="on"){
+                ev.target.innerHTML="off"
+             }
+             else{
+                ev.target.innerHTML = "on"         
+             }
+           }
+        </script>
+    </body>
+</html> -->

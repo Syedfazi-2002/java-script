@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <style></style>
+    </head>
+    <body>
+        <button id="d1" onclick="abc()"></button>
+        <table>
+            <th>name</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <tbody></tbody>
+        </table>
+        <script>
+           var a =  document.getElementById("d1")
+           a.innerHTML="click me"
+           var ar = []
+            function abc(){
+                fetch("https://restcountries.com/v3/all").then(function(res){
+                res.json().then(function(data){
+                    ar = data;
+                    gentable();
+                })
+            })
+            }
+            function gentable(){
+                ar.forEach(function(country){
+                 var ntr = document.createElement("tr")
+                 var ntd = document.createElement("td")
+                 n
+                })
+            }
+        </script>
+    </body>
+</html>

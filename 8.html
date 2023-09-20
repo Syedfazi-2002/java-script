@@ -1,0 +1,27 @@
+<!--  creating like and dislike button  -->
+<html>
+    <head>
+    </head>
+    <body>
+        <div id = "d1" style="text-align: center;">
+            <h1> like and dislike button </h1>
+         <button style="color: blue;" onclick="b()">like</button> <span id = "d2"></span>
+         <br><br>
+        <button style="color: red;" onclick="c()">dislike</button><span id ="d3"></span>
+        </div>
+        <script>
+            var isButtonClicked = 0
+            document.getElementById("d2").innerHTML = isButtonClicked
+            var isButtonClicked2 = 0          
+            document.getElementById("d3").innerHTML = isButtonClicked2
+            function b(){
+              isButtonClicked++
+              document.getElementById("d2").innerHTML = isButtonClicked
+            }        
+            function c(){
+                isButtonClicked2++
+                document.getElementById("d3").innerHTML = isButtonClicked2
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style>
+            #d2{
+                width: 250px;
+                height: 150px;
+                border: 1px solid;
+            }
+            #d4,#d5,#d6{
+                width: 200px;
+                height: 100px;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <img  onmouseover="touch(event)"  src="" alt="">
+            <img  onmouseover="touch(event)"  src="" alt="">
+            <img  onmouseover="touch(event)"  src="" alt="">
+        </center>
+        <center>
+        <div id = "d2"></div>
+        </center>
+        <script>
+             var pics = ["https://www.rd.com/wp-content/uploads/2020/01/GettyImages-1131335393-e1650030686687.jpg",
+                   "https://www.disabledliving.co.uk/wp-content/uploads/2017/05/shutterstock_273041204-e1531142497199.jpg",
+                   "https://w0.peakpx.com/wallpaper/194/495/HD-wallpaper-aeroplane-graphy-sky-wings-planes.jpg"
+            ] 
+              var c =  document.getElementById("d4").src=pics[0]
+              var d =  document.getElementById("d5").src=pics[1]
+              var e =  document.getElementById("d6").src=pics[2]
+            function touch(ev){
+               document.getElementById("d2")
+               ev.target.src.pics[0]
+                
+            }
+        </script>
+    </body>
+</html>

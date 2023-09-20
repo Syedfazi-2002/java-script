@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <style>
+            table tr td{
+                border: 1px solid;
+            }
+            table tr th{
+                border: 1px solid;
+            }
+        </style>
+    </head>
+    <body>
+        Enter Firstname : <input type="text" id="fn" placeholder="firstname"><br><br>
+        Enter Lastname : <input type="text" id="ln" placeholder="lastname"><br><br>
+        Enter Gender : <input type="text" id="gender" placeholder="gender"><br><br>
+        <button onclick="addstudent()">Add data</button><br><br>
+        <table id="tt" style="border: 1px solid" cellspacing="0">
+        </table>
+        <script>
+            var students = [];
+            function addstudent(){
+                var student = {
+                    firstname : '',
+                    lastname : '',
+                    gender : '',
+                    delete : ''
+                }
+                student.firstname = document.getElementById('fn').value;
+                student.lastname = document.getElementById('ln').value;
+                student.age = document.getElementById('gender').value;
+                students.push(student);
+                console.log(students);
+                table();
+            }
+            function table(){
+                var tb = document.getElementById('tt');
+                tb.innerHTML='';
+                var ctr1 = document.createElement('tr');
+                var cth1 = document.createElement('th');
+                cth1.innerHTML = "Firstname";
+                var cth2 = document.createElement('th');
+                cth2.innerHTML = "Lastname";
+                var cth3 = document.createElement('th');
+                cth3.innerHTML = "Gender";
+                var cth4 = document.createElement('th');
+                cth4.innerHTML = "Actions";
+                ctr1.appendChild(cth1);
+                ctr1.appendChild(cth2);
+                ctr1.appendChild(cth3);
+                ctr1.appendChild(cth4);
+                  tb.appendChild(ctr1);
+
+                students.forEach(function(dtl,i){
+                    var ctr = document.createElement('tr');
+                    var ctd1 = document.createElement('td');
+                    var ctd2 = document.createElement("td");
+                    var ctd3 = document.createElement("td");
+                    var ctd4 = document.createElement("td");
+                    var btn = document.createElement("button");
+                    var btn1 = document.createElement("button");
+
+                    ctd1.innerHTML = dtl.firstname;
+                    ctd2.innerHTML = dtl.lastname;
+                    ctd3.innerHTML = dtl.age;
+                    btn.innerHTML = "Delete";
+                    btn1.innerHTML = "Edit";
+                 
+                    ctr.appendChild(ctd1);
+                    ctr.appendChild(ctd2);
+                    ctr.appendChild(ctd3);
+                    ctd4.appendChild(btn);
+                    ctr.appendChild(ctd4);
+                    tb.appendChild(ctr);
+
+                    btn.onclick = function(){
+                        students.splice(i,1);
+                        table();
+                    } 
+                });
+            }          
+        </script>
+    </body>
+</html>

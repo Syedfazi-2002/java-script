@@ -1,0 +1,40 @@
+<!-- changing the background color on using on and off button -->
+<html>
+    <head>
+      <style>
+         #d1{          
+            width: 200px;
+            height: 100px;
+            border: 1px solid;
+            margin: 0 auto;
+         }
+      </style>
+    </head>
+    <body>
+        <h1  style="text-align: center;">change background color box using buttons</h1>
+        <div id ="d1"></div>
+        <div style="text-align: center;"> 
+            <button onclick="b()" style="background-color: orange;" id="d4"></button>
+            <button onclick="c()" style="background-color: orange;" id ="d5"></button> </div>
+        <script>
+            document.getElementById("d4").innerHTML="on"
+            document.getElementById("d5").innerHTML="off"
+           function b(){
+            var f = document.getElementById("d1")
+            f.style.backgroundColor="yellow"
+            var k = document.getElementById("d4")
+            k.style.backgroundColor="red"
+            var i = document.getElementById("d5")
+            i.style.backgroundColor="white"
+           }
+           function c(){
+            var h = document.getElementById("d1")
+            h.style.backgroundColor="white"
+            var w = document.getElementById("d5")
+            w.style.backgroundColor="red"
+            var x = document.getElementById("d4")
+            x.style.backgroundColor="white"
+           }
+        </script>
+    </body>
+</html>

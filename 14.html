@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body> 
+      <center><h1>Showing images with url </h1></center>
+      <center>enter url : <input type="text" id="d3"></center><br>
+      <center><button id="d1" onclick="abc()"></button></center><br>
+      <center><div id ="d2"></div></center>
+       <script>
+         var t =  document.getElementById("d1")
+         t.innerHTML="add image"
+        var ar = []
+        var w = document.getElementById("d2")
+        function abc(){
+         var x = document.getElementById("d3")
+           ar.push(x.value)       
+           photo() ;              
+        }
+      function photo(){
+        w.innerHTML=""
+        ar.forEach(function(a){
+            var t = document.createElement("img")
+            t.src =a
+            t.width=150
+            t.height=100
+            document.getElementById("d2").appendChild(t)
+        })
+      }
+       </script>
+    </body>
+</html>

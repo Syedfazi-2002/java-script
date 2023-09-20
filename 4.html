@@ -1,0 +1,33 @@
+<!-- Changing the color on click  -->
+<html>
+    <head>
+        <style>
+            #d1{
+                width: 200px;
+                height: 150px;
+                border: 1px solid;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "d1" onclick="a()"> </div>
+        <script>
+             var paint = ["red","green","black","pink","yellow"]    
+             var c = document.getElementById("d1")                              
+             var index = 0;
+             c.style.backgroundColor=paint[index] 
+            function a(){                                                                                
+                if(index<paint.length-1){
+                  index++
+                  c.style.backgroundColor=paint[index]
+                }
+                else{
+                    index = 0
+                    c.style.backgroundColor=paint[index]
+                }              
+                    
+            }
+        </script>
+    </body>
+</html>

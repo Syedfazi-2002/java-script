@@ -1,0 +1,66 @@
+<html>
+<head>
+</head>
+<body>
+    <input id="d1" type="text" placeholder="firstname">
+    <button id="d2" onclick="abc()"></button>
+    <button id="d4" onclick="bbc()"></button>
+    <button id="d5" onclick="ccc()"></button>
+    <ul id="d3"></ul>
+    <script>
+        var d = document.getElementById("d1")
+
+        var b = document.getElementById("d2")
+        b.innerHTML = "sumbit"
+
+        var ar = []
+        var c = document.getElementById("d3")
+        var f = document.getElementById("d4")
+        f.innerHTML = "A-Z"
+        var g = document.getElementById("d5")
+        g.innerHTML = "z-A"
+        function abc() {
+            ar.push(d.value)
+            maketable();
+        }
+          function maketable() {
+            var c = document.getElementById("d3")
+            c.innerHTML = "";
+            ar.forEach(function (a, b) {
+                var nli = document.createElement("li")
+                nli.innerHTML = a;
+                c.appendChild(nli)
+            })
+        }
+        function bbc() {
+            ar.sort(function (a, b) {
+                if (a > b) {
+                    return 1
+                }
+                if (a < b) {
+                    return -1
+                }
+                else {
+                    return 0
+                }
+            })
+            maketable();
+        }
+        function ccc() {
+            ar.sort(function (a, b) {
+                if (a < b) {
+                    return 1
+                }
+                if (a > b) {
+                    return -1
+                }
+                else {
+                    return 0
+                }
+            })
+            maketable();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <input id="d3" type="text" placeholder="firstname"><br>
+        <input id="d4" type="text" placeholder="lastname"><br>
+        <input id="d5" type="text" placeholder="age"><br>
+        <button id="d1" onclick="abc()"></button>
+        <button id="d2" onclick="bcd()"></button>
+        <table>
+            <th>firstname</th>
+            <th>lastname</th>
+            <th>age</th>
+        </table>
+        <script>
+           var k =  document.getElementById("d1")
+           k.innerHTML="add"
+           var m = document.getElementById("d2")
+           m.innerHTML="delete"
+           var details =[]
+           function abc(){
+            var detail = {
+                firstname : "" ,
+                lastname : "",
+                age : "" ,
+            }
+            detail.firstname=document.getElementById("d3").value
+            detail.lastname=document.getElementById("d4").value
+            detail.age=document.getElementById("d5").value
+            details.push(detail)
+            console.log(details)
+           }
+           function bcd (){
+            
+           }
+        </script>      
+    </body>
+</html>
